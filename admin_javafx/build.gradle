@@ -1,0 +1,29 @@
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+jar{
+    group = 'biz.bagira'
+    baseName = 'JavaFX_JMS'
+    version = '1.0'
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+
+    compile group: 'org.apache.activemq', name: 'activemq-broker', version: '5.14.5'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.2'
+    testCompile group: 'org.loadui', name: 'testFx', version: '3.1.2'
+
+
+}

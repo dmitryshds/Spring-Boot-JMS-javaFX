@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+        <head>
+                <title>Title</title>
+        </head>
+        <link type="text/css" rel="stylesheet" href="/webjars/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/webjars/datatables/1.10.15/css/jquery.dataTables.min.css"/>
+        
+        <body>
+                <h1>Adverts</h1>
+                <div class="container">
+                        <div class="starter-template">
+                                <table id="example" class="display" cellspacing="0" width="100%">
+                                        <thead>
+                                                <tr>
+                                                        <th>Id</th>
+                                                        <th>Name</th>
+                                                        <th>Text</th>
+                                                        <th>Price</th>
+                                                </tr>
+                                        </thead>
+                                        <tfoot>
+                                                <tr>
+                                                        <th>Id</th>
+                                                        <th>Name</th>
+                                                        <th>Text</th>
+                                                        <th>Price</th>
+                                                </tr>
+                                        </tfoot>
+                                        <tbody>
+                                                <tr th:each="advert : ${adverts}">
+                                                        <td th:text="${advert.id}"></td>
+                                                        <td th:text="${advert.name}"></td>
+                                                        <td th:text="${advert.text}"></td>
+                                                        <td th:text="${advert.price}"></td>
+                                                </tr>
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+                <script type="text/javascript" src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+                <script type="text/javascript" src="/webjars/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+                <script type="text/javascript" src="/webjars/datatables/1.10.15/js/jquery.dataTables.min.js"></script>
+                <script th:inline="javascript">
+                    /*<![CDATA[*/
+                    $(document).ready(function () {
+                        $('#example').DataTable();
+
+                    });
+                    /*]]>*/
+                </script>
+        </body>
+</html>
