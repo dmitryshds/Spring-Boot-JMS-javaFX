@@ -23,8 +23,7 @@ public class JmsConsumer {
 
     @JmsListener(destination = "${activemq.queue-name}")
     public void consume(String msg) {
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!" + msg);
-        logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + msg);
+
         ObjectMapper mapper = new ObjectMapper();
         Advert advert = null;
         try {
